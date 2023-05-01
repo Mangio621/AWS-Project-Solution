@@ -1,0 +1,1 @@
+This directory contains the CSV tables that stores the customer table and the investments table
