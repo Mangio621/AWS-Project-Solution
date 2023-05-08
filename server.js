@@ -9,9 +9,9 @@ import express from 'express';
 import { createServer } from 'http';
 import { fileURLToPath } from 'url';
 import { Server } from 'socket.io';
+import * as csv from './csv-utils.js';
 
 const PORT = 3000; // Standardized HTML port. Change if necessary or if this port is in use!
-
 // Set up the server with express
 const app = express();
 const server = createServer(app);
