@@ -18,7 +18,7 @@ const setupIncomingEvents = (socket) => {
 // On document is ready/loaded. This is the entry point of the client script
 $(() => {
     const socket = io(); // The socket variable to be passed into different functions/components to talk to the server
-    setupIncomingEvents(socket); // 
+    setupIncomingEvents(socket);
 });
 
 setupIncomingEvents();

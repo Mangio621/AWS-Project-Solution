@@ -71,6 +71,40 @@ const isRecord = (csvLine) => {
     }
 }
 
+const convertCustomerRecordJSON = (
+    custID, custFname, custLname, custPhone,
+    custEmail, custAge, custSalary, custIcon
+) => {
+    let jsonObject = {
+        custID: custID,
+        custFname: custFname,
+        custLname: custLname,
+        custPhone: custPhone,
+        custEmail: custEmail,
+        custAge: custAge,
+        custSalary: custSalary,
+        custIcon: custIcon
+    };
+    return jsonObject;
+}
+
+const convertInvestmentRecordJSON = (
+    assetID, custID, assetName, assetCat,
+    assetPdate, assetSdate, assetPprice, assetSprice
+) => {
+    let jsonObject = {
+        assetID: assetID,
+        custID: custID,
+        assetName: assetName,
+        assetCat: assetCat,
+        assetPdate: assetPdate,
+        assetSdate: assetSdate,
+        assetPprice: assetPprice,
+        assetSprice: assetSprice
+    };
+    return jsonObject;
+}
+
 /**
  * Fetches in JSON format, the record retrieved with the associated content
  * @param {*} table Table to fetch from
@@ -79,12 +113,36 @@ const isRecord = (csvLine) => {
  * @param {*} callback On data fetched/errored
  */
 export const queryFetch = (table, field, content, callback) => {
-    let responses = [];
+    let recordsResponse = [];
     fs.readFile(tableDir + table, (err, data) => {
         if(err) {
             callback(queryStatus.fail, 'Could not retrieve table data');
         } else {
-
+            let array = data.toString().split('\n');
+            // Handle Queries for each table
+            const tableLayout = table === tables.customer ? customerFields : investmentFields;
+            array.forEach(recordStr => {
+                if(isRecord(recordStr)) {
+                    const fieldData = recordStr.split(',');
+                    if(fieldData[tableLayout.indexOf(field)]
+                        .toLowerCase()
+                        .includes(content.toLowerCase())) {
+                        // Found a record with matching content of a field
+                        if(table === tables.customer) {
+                            recordsResponse.push(convertCustomerRecordJSON(
+                                fieldData[0], fieldData[1], fieldData[2], fieldData[3],
+                                fieldData[4], fieldData[5], fieldData[6], fieldData[7]
+                            ));
+                        } else if (table === tables.investments) {
+                            recordsResponse.push(convertInvestmentRecordJSON(
+                                fieldData[0], fieldData[1], fieldData[2], fieldData[3],
+                                fieldData[4], fieldData[5], fieldData[6], fieldData[7]
+                            ));
+                        }
+                    }
+                }
+            });
+            callback(queryStatus.success, recordsResponse);
         }
     });
 }

@@ -60,4 +60,11 @@ io.on('connection', (socket) => {
 // Listen from localhost.
 server.listen(PORT, () => {
     console.log('Server is listening on port ' + PORT);
+    csv.queryFetch(csv.tables.customer, csv.fields.custID, '16-7944667', (status, data) => {
+        if(status === csv.queryStatus.success) {
+            data.forEach(record => {
+                console.log(record);
+            });
+        }
+    });
 });
