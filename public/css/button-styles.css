@@ -1,3 +1,15 @@
 .btn {
     background-color: rgb(95, 230, 111);
 }
+
+.control-btn-container {
+    display:flex;
+    justify-content: end;
+    /* border: 1px solid lime; */
+}
+
+.control-btn-container button{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: monospace;
+}
