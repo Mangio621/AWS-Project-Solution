@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> AWS Interface </title>
-        <meta name="author" content="Cole P. Mangio">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <base href="/">
-        <!--Style Links-->
-        <link href="/css/style.css" type="text/css" rel="stylesheet">
-        <!--Script Links-->
-        <script src="/client-scripts/framework/socket.io.js"></script>
-        <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
-        <script type="module" src="/client-scripts/client.js"></script>
-    </head>
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Laptop Web App</title>
+    <script src="/client-scripts/framework/socket.io.js"></script>
+    <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script type="module" src="/client-scripts/client.js"></script>
+    <link href="../public/css/header.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/footer.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/table.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/general.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <div class="heading">
         
-        <h1> AWS Interface </h1>
-
-
-    </body>
+        <h1><img class="logo" src="../public/resources/image/logo.png" alt="company logo"> AWS Customer List</h1>
+      </div>
+      <!-- <br/> -->
+      <nav>
+        <ul>
+          <li class="avai-link on-page" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+          <li class="disa-link" onclick="">Risk Analytics</li>
+          <li class="avai-link" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+          <li class="disa-link" onclick="">Others</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Add your main content here -->
+      <h2 class="no-margin">Customer List</h2>
+      <div class="tab-container">
+        <table id="tab-customer">
+          <thead>
+            <tr>
+              <th id="tab01-custName">Customer Name</th>
+              <th id="tab01-custJoinDate">Join Date</th>
+              <th id="tab01-custStatus">Status</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 AWS Portfolio Management. All rights reserved.</p>
+      <br/>
+      <p>SWE30010 - Team 4</p>
+    </footer>
+  </body>
 </html>

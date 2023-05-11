@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Laptop Web App</title>
+    <script src="/client-scripts/framework/socket.io.js"></script>
+    <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script type="module" src="/client-scripts/client.js"></script>
+    <link href="../public/css/header.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/footer.css" type="text/css" rel="stylesheet">
+    <!-- <link href="../public/css/portfolio.css" type="text/css" rel="stylesheet"> -->
+    <!-- <link href="../public/css/table.css" type="text/css" rel="stylesheet"> -->
+    <link href="../public/css/general.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/form.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/button-styles.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        
+        <h1><img class="logo" src="../public/resources/image/logo.png" alt="company logo"> Customer Registration Form</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="avai-link" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+          <li class="disa-link" onclick="">Risk Analytics</li>
+          <li class="avai-link on-page" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+          <li class="disa-link" onclick="">Others</li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <!-- Customer information -->
+        <h2 class="no-margin centre-text">Asset Creation Form for Customer <span id="cust-placeholder" style="font-weight: bold;"></span></h2>  
+        <br/>    
+        <div class="form-container">
+            <form id="asset-form"> 
+                <label for="form-assetName">Asset Name:<span class="required-indi">*</span></label>
+                <input required type="text" id="form-assetName">
+                
+                <label for="form-assetCat">Category:<span class="required-indi">*</span></label>
+                <input required type="text" id="form-assetCat">
+                
+                <label for="form-pdate">Purchase Date:<span class="required-indi">*</span></label>
+                <input required type="date" id="form-pdate">
+                
+                <label class="form-money" for="form-pamt">Purchase Amount:<span class="required-indi">*</span></label>
+                <input required type='number' id="form-pamt">
+                
+                <label for="form-sdate">Sold Date:<span class="optional-indi">*</span></label>
+                <input type="date" id="form-sdate">
+                
+                <label class="form-money" for="form-samt">Sold Amount:<span class="optional-indi">*</span></label>
+                <input type="number" id="form-samt">
+            </form>
+        </div>
+        
+        <br/>
+        <div class="ctrl-btn-container">
+            <button onclick="document.querySelector('#asset-form').reset()" >clear</button>
+            <button id="cust-back" onclick="window.location.href = 'index.ejs'">back</button>
+            <button id="cust-save">save</button>
+        </div>
+
+
+    </main>
+    <footer>
+      <p>&copy; 2023 AWS Portfolio Management. All rights reserved.</p>
+      <br/>
+      <p>SWE30010 - Team 4</p>
+    </footer>
+  </body>
+</html>
