@@ -1,0 +1,54 @@
+.info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.user-image {
+    flex: 0;
+    margin-right: 20px;
+    /* border-radius: 50%; */
+    height: 200px;
+    width: auto;
+    background-size:auto;
+}
+
+.user-info {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.user-info table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.user-info td, .user-info th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.user-info th {
+    background-color: aliceblue;
+}
+
+.user-details {
+    flex: 2;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    height: 200px;
+}
+
+
+
+/* Input for tables */
+#tab-portfolio tbody tr td input{
+    border: none;
+    background: none;
+}

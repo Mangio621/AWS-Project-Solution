@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Laptop Web App</title>
+    <script src="/client-scripts/framework/socket.io.js"></script>
+    <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script type="module" src="/client-scripts/client.js"></script>
+    <link href="../public/css/header.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/footer.css" type="text/css" rel="stylesheet">
+    <!-- <link href="../public/css/portfolio.css" type="text/css" rel="stylesheet"> -->
+    <!-- <link href="../public/css/table.css" type="text/css" rel="stylesheet"> -->
+    <link href="../public/css/general.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/form.css" type="text/css" rel="stylesheet">
+    <link href="../public/css/button-styles.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        
+        <h1><img class="logo" src="../public/resources/image/logo.png" alt="company logo"> Customer Registration Form</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="avai-link" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+          <li class="disa-link" onclick="">Risk Analytics</li>
+          <li class="avai-link on-page" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+          <li class="disa-link" onclick="">Others</li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <!-- Customer information -->
+        <h2 class="no-margin centre-text">Customer Info Input Form</h2>  
+        <br/>    
+        <div class="form-container">
+            <form id="cust-form"> 
+                <label for="form-firstName">First Name:<span class="required-indi">*</span></label>
+                <input required type="text" id="form-firstName">
+                
+                <label for="form-lastName">Last Name:<span class="required-indi">*</span></label>
+                <input required type="text" id="form-lastName">
+                
+                <label for="form-phone">Phone Number:<span class="optional-indi">*</span></label>
+                <input type="tel" id="form-phone">
+                
+                <label for="form-email">Email Address:<span class="optional-indi">*</span></label>
+                <input type="email" id="form-email">
+                
+                <label for="form-age">Age:<span class="optional-indi">*</span></label>
+                <input type="number" id="form-age" min="16">
+                
+                <label for="form-salary">Salary:<span class="optional-indi">*</span></label>
+                <input type="number" id="form-salary">
+                
+                <label for="form-pfp">Profile image link:<span class="optional-indi">*</span></label>
+                <input type='text' id="form-pfp"></input>
+            </form>
+        </div>
+        
+        <br/>
+        <div class="ctrl-btn-container">
+            <button onclick="document.querySelector('#cust-form').reset()" >clear</button>
+            <button id="cust-back" onclick="window.location.href = 'index.ejs'">back</button>
+            <button id="cust-save">save</button>
+        </div>
+
+
+    </main>
+    <footer>
+      <p>&copy; 2023 AWS Portfolio Management. All rights reserved.</p>
+      <br/>
+      <p>SWE30010 - Team 4</p>
+    </footer>
+  </body>
+</html>

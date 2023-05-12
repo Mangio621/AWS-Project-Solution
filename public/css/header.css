@@ -1,0 +1,72 @@
+/* Add any custom styles here */
+/* Style for header */
+html {
+font-family: monospace;
+}
+
+/* headings for all views with headers */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.heading {
+    display: flex;
+}
+
+.logo{
+    height: 1.5em;
+    width: auto;
+}
+
+.heading h1 {
+margin: 0;
+font-size: 36px;
+font-weight: bold;
+/* vertical-align:middle; */
+}
+
+/* navigation styling (into boxes with hover interaction) */
+header nav{
+padding: 10px 0;
+}
+
+header nav ul{
+display: flex;
+justify-content: space-evenly;
+margin-top: 10px;
+padding: 0;
+list-style: none;
+font-size: 0;
+/* border: 1px solid lime; */
+}
+
+header nav li {
+flex: 1;
+margin:none;
+text-align: center;
+color: #fff;
+font-size: 18px;
+padding: 5px 10px;
+border-radius: 5px;
+border: 1px solid hsla(150, 80%, 80%, 0.3)
+}
+
+header nav li.avai-link:hover {
+background-color: aliceblue;
+color: #333;
+}
+
+header nav li.disa-link{
+    color: gray;
+}
+
+header nav li.on-page{
+    background-color: aliceblue;
+    color: black;
+}
+
+
+

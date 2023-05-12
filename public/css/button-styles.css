@@ -1,3 +1,15 @@
-.btn {
-    background-color: rgb(95, 230, 111);
+.ctrl-btn-container {
+    display:flex;
+    justify-content:center;
+    /* border: 1px solid lime; */
+}
+
+.ctrl-btn-container button{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.ctrl-btn:hover {
+    opacity: 0.7;
 }

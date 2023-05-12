@@ -1,0 +1,11 @@
+.no-margin{
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.centre-text{
+    text-align: center;
+}
