@@ -146,3 +146,11 @@ export const queryFetch = (table, field, content, callback) => {
         }
     });
 }
+
+export const insertRecordToTable = (table, recordObj) => {
+    
+}
+
+export const modifyRecordInTable = () => {
+
+}
