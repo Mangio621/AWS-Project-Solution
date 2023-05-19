@@ -5,6 +5,7 @@
     <title>Laptop Web App</title>
     <script src="/client-scripts/framework/socket.io.js"></script>
     <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script> const page = "cust-create" </script>
     <script type="module" src="/client-scripts/client.js"></script>
     <link href="css/header.css" type="text/css" rel="stylesheet">
     <link href="css/footer.css" type="text/css" rel="stylesheet">
@@ -18,14 +19,13 @@
   <body>
     <header>
       <div class="heading">
-        
-        <h1><img class="logo" src="../public/resources/image/logo.png" alt="company logo"> Customer Registration Form</h1>
+        <h1><img class="logo" src="resources/image/logo.png" alt="company logo"> Customer Registration Form</h1>
       </div>
       <nav>
         <ul>
-          <li class="avai-link" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+          <li class="avai-link" onclick="window.location.href = '/' ">Portfolio</li>
           <li class="disa-link" onclick="">Risk Analytics</li>
-          <li class="avai-link on-page" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+          <li class="avai-link on-page" onclick="window.location.href = '/cust-create' ">Add Customer</li>
           <li class="disa-link" onclick="">Others</li>
         </ul>
     </nav>
@@ -62,7 +62,7 @@
         <br/>
         <div class="ctrl-btn-container">
             <button onclick="document.querySelector('#cust-form').reset()" >clear</button>
-            <button id="cust-back" onclick="window.location.href = 'index.ejs'">back</button>
+            <button id="cust-back" onclick="window.location.href = '/'">back</button>
             <button id="cust-save">save</button>
         </div>
 

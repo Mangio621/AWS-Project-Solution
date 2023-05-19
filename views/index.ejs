@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Laptop Web App</title>
-    <script src="/client-scripts/framework/socket.io.js"></script>
+    <script type="application/javascript" src="/client-scripts/framework/socket.io.js"></script>
     <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script> const page = "portfolio" </script>
     <script type="module" src="/client-scripts/client.js"></script>
     <link href="css/header.css" type="text/css" rel="stylesheet">
     <link href="css/footer.css" type="text/css" rel="stylesheet">
@@ -21,9 +22,9 @@
       <!-- <br/> -->
       <nav>
         <ul>
-          <li class="avai-link on-page" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+          <li class="avai-link on-page" onclick="window.location.href = '/' ">Portfolio</li>
           <li class="disa-link" onclick="">Risk Analytics</li>
-          <li class="avai-link" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+          <li class="avai-link" onclick="window.location.href = '/cust-create' ">Add Customer</li>
           <li class="disa-link" onclick="">Others</li>
         </ul>
       </nav>
@@ -36,12 +37,13 @@
           <thead>
             <tr>
               <th id="tab01-custName">Customer Name</th>
-              <th id="tab01-custJoinDate">Join Date</th>
-              <th id="tab01-custStatus">Status</th>
+              <th id="tab01-custJoinDate">Customer Email</th>
+              <th id="tab01-custStatus">Customer Phone No.</th>
               <th>View</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody id="customers-list">
+          </tbody>
         </table>
       </div>
     </main>

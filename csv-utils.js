@@ -147,13 +147,57 @@ export const queryFetch = (table, field, content, callback) => {
     });
 }
 
+export const queryFetchAll = (table, callback) => {
+    let recordsResponse = [];
+    fs.readFile(tableDir + table, (err, data) => {
+        if(err) {
+            callback(queryStatus.fail, 'Could not retrieve table data');
+        } else {
+            let array = data.toString().split('\n');
+            // Handle Queries for each table
+            const tableLayout = table === tables.customer ? customerFields : investmentFields;
+            array.forEach(recordStr => {
+                if(isRecord(recordStr)) {
+                    const fieldData = recordStr.split(',');
+                    if(table === tables.customer) {
+                        recordsResponse.push(convertCustomerRecordJSON(
+                            fieldData[0], fieldData[1], fieldData[2], fieldData[3],
+                            fieldData[4], fieldData[5], fieldData[6], fieldData[7]
+                        ));
+                    } else if (table === tables.investments) {
+                        recordsResponse.push(convertInvestmentRecordJSON(
+                            fieldData[0], fieldData[1], fieldData[2], fieldData[3],
+                            fieldData[4], fieldData[5], fieldData[6], fieldData[7]
+                        ));
+                    }
+                }
+            });
+            callback(queryStatus.success, recordsResponse);
+        }
+    });
+}
+
+const getRandom = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export const insertRecordToTable = (table, recordData) => {
     if(table === tables.customer) {
-        
+        const id1 = getRandom(10, 99).toString()
+        const id2 = getRandom(100000, 999999).toString()
+        const id = id1+"-"+id2;
+        fs.appendFile(tableDir+tables.customer, '\n'+`
+            ${id},${recordData.custFname},${recordData.custLname},${recordData.custPhone},${recordData.custEmail},${recordData.custAge},${recordData.custSalary},${recordData.custIcon}
+        `.trim(), (err) => {
+
+        });
     } else if (table === tables.investments) {
 
     }
 }
 
 export const modifyRecordInTable = () => {
+
 }

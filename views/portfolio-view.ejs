@@ -5,27 +5,27 @@
     <title>Laptop Web App</title>
     <script src="/client-scripts/framework/socket.io.js"></script>
     <script type="module" src="/client-scripts/framework/jquery.min.js"></script>
+    <script> const page = 'portfolio-view' </script>
     <script type="module" src="/client-scripts/client.js"></script>
-    <link href="../public/css/header.css" type="text/css" rel="stylesheet">
-    <link href="../public/css/footer.css" type="text/css" rel="stylesheet">
-    <link href="../public/css/portfolio.css" type="text/css" rel="stylesheet">
-    <link href="../public/css/table.css" type="text/css" rel="stylesheet">
-    <link href="../public/css/general.css" type="text/css" rel="stylesheet">
-    <link href="../public/css/button-styles.css" type="text/css" rel="stylesheet">
+    <link href="css/header.css" type="text/css" rel="stylesheet">
+    <link href="css/footer.css" type="text/css" rel="stylesheet">
+    <link href="css/portfolio.css" type="text/css" rel="stylesheet">
+    <link href="css/table.css" type="text/css" rel="stylesheet">
+    <link href="css/general.css" type="text/css" rel="stylesheet">
+    <link href="css/button-styles.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <header>
       <div class="heading">
-        
-        <h1><img class="logo" src="../public/resources/image/logo.png" alt="company logo"> AWS Customer Portolio Statistics</h1>
+        <h1><img class="logo" src="resources/image/logo.png" alt="company logo"> AWS Customer Portolio Statistics</h1>
       </div>
       <!-- <br/> -->
       <nav>
         <ul>
-            <li class="avai-link on-page" onclick="window.location.href = 'index.ejs' ">Portfolio</li>
+            <li class="avai-link on-page" onclick="window.location.href = '/' ">Portfolio</li>
             <li class="disa-link" onclick="">Risk Analytics</li>
-            <li class="avai-link" onclick="window.location.href = 'cust-create.ejs' ">Add Customer</li>
+            <li class="avai-link" onclick="window.location.href = '/cust-create' ">Add Customer</li>
             <li class="disa-link" onclick="">Others</li>
         </ul>
       </nav>
@@ -34,35 +34,11 @@
         <!-- Customer information -->
         <h2 class="no-margin">User Information</h2>
       <div class="info-container">
-          <img class="user-image" src='https://via.placeholder.com/200' alt="user-image">
+          <img class="user-image" id="user-img" src='https://via.placeholder.com/200' alt="user-image">
           <div class="user-info">
-              <table>
-                  <tr>
-                      <th>Field</th>
-                      <th>Value</th>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td>John Doe</td>
-                    </tr>
-                    <tr>
-                        <td>Age</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>Location</td>
-                        <td>San Francisco, CA</td>
-                    </tr>
-                    <tr>
-                        <td>Occupation</td>
-                        <td>Web Developer</td>
-                    </tr>
-                    <tr>
-                        <td>Salary</td>
-                        <td>$20000</td>
-                    </tr>
-                </table>
-            </div>
+            <table id="user-info-table">
+            </table>
+          </div>
       </div>
       <br/><br/>
       
@@ -80,7 +56,8 @@
                 <th id="tab01-assetSoldAmt">Sold Amount</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="tab-portfolio-data">
+        </tbody>
         </table>
         </div>
         
